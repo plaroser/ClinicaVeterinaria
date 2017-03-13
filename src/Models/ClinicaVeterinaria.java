@@ -50,12 +50,18 @@ public class ClinicaVeterinaria {
 	 *            Nuevo comentario que le queremos asignar al animal.
 	 */
 	private void modificaComentarioAnimal(String nombreAnimal, String nuevoComentario) {
-		if(buscarAnimal(nombreAnimal)!=null){
-		buscarAnimal(nombreAnimal).setComentarios(nuevoComentario);
-		}else{
+		if (buscarAnimal(nombreAnimal) != null) {
+			buscarAnimal(nombreAnimal).setComentarios(nuevoComentario);
+		} else {
 			System.out.println("[ERROR] Animal no encontrado.");
 		}
 	}
 
-	
+	@Override
+	public String toString() {
+		String aux = "ClinicaVeterinaria lista De Animales: ";
+		aux += "\n" + listaAnimales;
+		return aux;
+	}
+
 }
