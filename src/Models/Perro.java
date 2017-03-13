@@ -12,9 +12,15 @@ public class Perro extends Animal {
 
 	@Override
 	public String toString() {
+		String comentarios;
+		if (this.comentarios != null) {
+			comentarios = "\nComentarios: " + this.comentarios;
+		} else {
+			comentarios = "";
+		}
 		return "Ficha de Perro\n" + "Nombre: " + this.nombre + "\nRaza: " + this.raza + "\nFecha de Nacimiento: "
-				+ this.fechaNachimiento + "\nPeso: " + this.peso + " Kg" + "\nMicrochip" + this.microchip
-				+ this.comentarios != null ? "Comentarios: " + this.comentarios : "";
+				+ this.fechaNachimiento + "\nPeso: " + this.peso + " Kg" + "\nMicrochip: " + this.microchip
+				+ comentarios;
 	}
 
 }
