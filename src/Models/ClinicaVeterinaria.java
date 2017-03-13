@@ -25,14 +25,14 @@ public class ClinicaVeterinaria {
 	/**
 	 * Busca un animal dentro de la lista de animales
 	 * 
-	 * @param nombre
+	 * @param nombreAnimal
 	 *            El nombre por el que queremos buscar al animal
 	 * @return Animal con dicho nombre o null si no lo encuentra
 	 */
-	private Animal buscarAnimal(String nombre) {
+	private Animal buscarAnimal(String nombreAnimal) {
 		if (listaAnimales.size() > 0) {
 			for (int i = 0; i < listaAnimales.size(); i++) {
-				if (nombre.equals(listaAnimales.get(i).getNombre())) {
+				if (nombreAnimal.equals(listaAnimales.get(i).getNombre())) {
 					return listaAnimales.get(i);
 				}
 			}
@@ -40,4 +40,22 @@ public class ClinicaVeterinaria {
 		return null;
 
 	}
+
+	/**
+	 * modifica el comentario en la ficha del animal que está en la lista
+	 * 
+	 * @param nombreAnimal
+	 *            Nombre del animal que le queremos modificar el comentario
+	 * @param nuevoComentario
+	 *            Nuevo comentario que le queremos asignar al animal.
+	 */
+	private void modificaComentarioAnimal(String nombreAnimal, String nuevoComentario) {
+		if(buscarAnimal(nombreAnimal)!=null){
+		buscarAnimal(nombreAnimal).setComentarios(nuevoComentario);
+		}else{
+			System.out.println("[ERROR] Animal no encontrado.");
+		}
+	}
+
+	
 }
